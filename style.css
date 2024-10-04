@@ -1,0 +1,411 @@
+/* Header styles */
+header {
+    background: url('./Resources/Header-BG.jpg') no-repeat center/cover; 
+    color: #ffffff;
+    padding: 100px 20px; 
+    text-align: center;
+    position: relative; 
+    max-width: 100%;
+}
+
+/* Adding a semi-transparent overlay */
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); 
+    z-index: 1;
+}
+
+/* Ensuring the header content is above the overlay */
+header h1, header p {
+    position: relative;
+    z-index: 2;
+}
+
+/* Header title styling */
+header h1 {
+    font-size: 3vw; 
+    font-family: 'Georgia', serif; 
+    color: #dddbdb; 
+    margin: 0px 0px 15px;
+    margin-bottom: 15px; 
+    letter-spacing: 1px; 
+    text-align: center; 
+    border-bottom: 3px solid #61dafb; 
+    display: inline-block; 
+    padding-bottom: 10px; 
+    text-transform: uppercase; 
+}
+
+header h1:hover {
+    color: #5597a9; 
+    transition: color 0.3s ease; 
+}
+
+header p {
+    font-size: 1.5vw;
+    font-family: 'Courier New', Courier, monospace; 
+}
+
+/* Navbar styling */
+nav {
+    background-color: #f4f4f4;
+    padding: 25px 0;
+    border: 2px solid #61dafb;
+    position: fixed; 
+    top: 0; 
+    left: 0;
+    width: 100%; 
+    z-index: 1000; 
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    font-family: 'Georgia', serif;
+    font-size: 1.4rem;
+    color: #333;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hover effect on navbar links */
+nav ul li a:hover {
+    background-color: #5597a9;
+    color: #fff;
+}
+
+/* Add some margin to the top of the rest of the content so it doesn't overlap the fixed navbar */
+body {
+    margin-top: 70px; 
+    padding: 3em;
+}
+
+/* Responsive styling for smaller screens */
+@media (max-width: 1200px) {
+    nav {
+        position: static;
+        border: none
+    }
+    nav ul {
+        position: static;
+        flex-direction: column; 
+        align-items: center; 
+        gap: 15px;
+    }
+
+    /* Adjustments for mobile view */
+    nav ul li a {
+        display: block; 
+        width: 100%;
+        text-align: center; 
+        border: 1px dashed #61dafb;
+    }
+
+    body {
+        margin-top: 0; 
+    }
+
+    header {
+        margin-top: 3rem; 
+        padding-top: 80px; 
+    }
+}
+
+
+/* Main section styling */
+main {
+    padding: 20px;
+    max-width: 1400px; 
+    margin: 2rem auto; 
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 20px; 
+}
+
+/* Blog section styling */
+.Blog {
+    flex: 1 1 410px; 
+    margin-bottom: 20px; 
+    border: 1px solid #ccc; 
+    border-radius: 8px; 
+    padding: 10px; 
+    background-color: #fff; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+    display: flex; 
+    flex-direction: column; 
+    transition: all 0.3s ease;
+}
+
+.Blog h2 {
+    font-family: 'Georgia', serif; 
+    font-size: 2rem; 
+    color: #333; 
+    text-align: center; 
+    margin-bottom: 20px; 
+}
+
+.Blog h3 {
+    font-family: 'Georgia', serif; 
+    font-size: 1.5rem; 
+    color: #444; 
+    margin-top: 15px; 
+    margin-bottom: 10px; 
+    border-bottom: 2px solid #61dafb; 
+    padding-bottom: 10px; 
+}
+
+.Blog p {
+    font-size: 1rem; 
+    line-height: 1.6; 
+    color: #555; 
+    margin-bottom: 15px; 
+}
+
+.Blog article {
+    margin-bottom: 20px; 
+}
+
+/* List styles */
+.Blog ul, .Blog ol {
+    padding-left: 20px; 
+}
+
+.Blog li {
+    margin-bottom: 15px; 
+}
+
+.Blog ol li b {
+    color: #015369; 
+}
+
+/* Image styles */
+.Blog img {
+    display: block; 
+    margin: 20px auto; 
+    max-width: 100%; 
+    height: auto; 
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
+    width: 300px;
+}
+
+/* Video styles */
+.Blog video {
+    display: block; 
+    margin: 20px auto; 
+    max-width: 100%; 
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
+    width: 300px;
+}
+
+.Blog:hover {
+    transform: scale(1.03); 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+    background-color: #5597a9;
+    color: #021014;
+}
+
+.Blog:hover p {
+    color: #fff;
+} 
+
+.Blog:hover ol li b {
+    color: #dddbdb;
+}
+
+/* Responsive Styling to the blog section */
+
+@media (max-width: 768px) {
+    .Blog {
+        flex: 1 1 100%; 
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .Blog {
+        flex: 1 1 50%; 
+    }
+}
+
+/* About Me Section Styling */
+#about-me {
+    background-color: #f0f8ff; 
+    border: 2px solid #61dafb; 
+    border-radius: 8px; 
+    padding: 20px; 
+    margin: 20px auto; 
+    max-width: 800px; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+    animation: fadeIn 1s ease-in alternate infinite; 
+    display: block;
+    font-family: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+}
+
+#about-me h2 {
+    font-family: 'Georgia', serif; 
+    font-size: 2rem; 
+    color: #333; 
+    text-align: center; 
+    margin-bottom: 15px; 
+}
+
+#about-me article p {
+    font-size: 1rem; 
+    line-height: 1.6; 
+    color: #555; 
+    margin-bottom: 15px; 
+    text-align: justify; 
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bold; 
+}
+
+/*Animation */
+@keyframes fadeIn {
+    from {
+        transform: translateY(100px); 
+    }
+    to {
+        transform: translateY(0px); 
+    }
+}
+
+/* Responsive Design for About Me Section */
+@media (max-width: 768px) {
+    #about-me {
+        padding: 15px;
+    }
+
+    #about-me h2 {
+        font-size: 1.5rem; 
+    }
+
+    #about-me article p {
+        font-size: 0.9rem; 
+    }
+}
+
+/* Contact Me Section Styling */
+
+.contact {
+    padding: 40px;
+    background-color: #f9f9f9; 
+    border: 1px solid #ddd; 
+    border-radius: 8px; 
+    margin-top: 8rem ; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  }
+  
+  .contact h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Form styling */
+  .form-group {
+    margin-bottom: 15px; 
+  }
+  
+  .form-group label {
+    display: block; 
+    margin-bottom: 5px; 
+    font-weight: bold; 
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    width: 100%; 
+    padding: 10px; 
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
+    transition: border-color 0.3s ease; 
+  }
+  
+  .form-group input:focus,
+  .form-group textarea:focus {
+    border-color: #66afe9; 
+    outline: none; 
+  }
+  
+  .submit-btn {
+    background-color: #61dafb; 
+    color: white; 
+    border: none; 
+    padding: 10px 20px; 
+    border-radius: 4px; 
+    cursor: pointer; 
+    transition: all 0.3s ease; 
+    display: block; 
+    margin: 0 auto; 
+  }
+  
+  .submit-btn:hover {
+    background-color: #575757;
+  }
+  
+  .contact-info {
+    margin-top: 20px; 
+    text-align: center; 
+  }
+  
+  .contact-info p {
+    margin: 5px 0; 
+  }
+  
+  /* Links styling */
+  .social-media {
+    text-align: center;
+    margin-top: 1rem;
+  }
+  .social-media i{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 35px;
+    width: 35px;
+    border: 1px solid  #61dafb;
+    border-radius: 50%;
+    color: #61dafb;
+    font-size: 20px;
+    margin: 0 7px;
+    transition: all 0.6s ease-in-out;
+}
+
+.social-media i:hover{
+    transform: scale(1.2);
+}
+  
+  /* Responsive design for contact section*/
+  @media (max-width: 600px) {
+    .contact {
+      padding: 50px; 
+    }
+  
+    .form-group input,
+    .form-group textarea {
+      font-size: 14px; 
+    }
+  }
+
+  /* footer section style */
+  
+  .footer {
+    padding: 20px;
+    background-color: #015369;
+    color: #fff;
+    text-align: center;
+    border-radius: 10px;
+  }
